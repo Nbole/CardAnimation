@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="100">
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@id/lyt_motion" />
+    </Transition>
+
+
+    <ConstraintSet
+        android:id="@+id/start"
+        app:visibilityMode="ignore" />
+
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@id/img_brand"
+            android:visibility="gone"
+            app:visibilityMode="ignore" />
+
+        <Constraint
+            android:id="@id/img_numbers"
+            android:visibility="gone"
+            app:visibilityMode="ignore" />
+
+        <Constraint
+            android:id="@id/img_bar"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/gray"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@id/img_back"
+            app:layout_constraintStart_toStartOf="@id/img_back"
+            app:layout_constraintTop_toTopOf="@id/img_back" />
+
+        <Constraint
+            android:id="@id/txt_security_code"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/_123"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/img_back"
+            app:layout_constraintEnd_toEndOf="@id/img_back" />
+    </ConstraintSet>
+
+
+</MotionScene>
